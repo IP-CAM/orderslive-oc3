@@ -1,5 +1,5 @@
 # OrdersLive
-OrdersLive for OpenCart 2.x
+OrdersLive for OpenCart 3.x
 
 This is a simple extension for [OpenCart](https://github.com/opencart/opencart) that adds an admin page with live update of new orders
 
