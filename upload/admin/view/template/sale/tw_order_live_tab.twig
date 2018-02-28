@@ -1,0 +1,23 @@
+{% set label = "label-default" %}
+{% if order_processing %}
+    {% set label = "label-warning" %}
+{% endif %}
+{% if order_complete %}
+    {% set label = "label-success" %}
+{% endif %}
+<li role="presentation" id="order-tab-{{ order_id }}" {{ old ? '': 'class="new"' }} >
+    <a id="order-link-{{ order_id }}" href="#order-{{ order_id }}" aria-controls="order-{{ order_id }}" role="tab"
+                                          data-toggle="tab">
+        <div class="pull-left" style="margin-right:5px;">
+            <h1><span class="badge">{{ order_id }}</span></h1>
+        </div>
+        <div>
+            <div>{{ "#{firstname} #{lastname}" }}</div>
+            <div><span class="label {{ label }}">
+					{{ order_status }}
+	            </span>
+            </div>
+        </div>
+
+    </a>
+</li>
