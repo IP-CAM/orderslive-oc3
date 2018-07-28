@@ -159,10 +159,13 @@
 		optionsToUi(){
 			this.$el.find('#tw-mute-sound').prop('checked',this.options.mute_sound);
 			this.$el.find('#tw-sound-select option[value="'+this.options.sound_file+'"]').prop('selected',true);
+			return this;
 		}
 	}
 	var settings = new TwLiveSettings('#settings');
-	settings.loadOptions().saveOptions().optionsToUi();
+	$(document).ready(function(){
+		settings.loadOptions().saveOptions().optionsToUi().parseSettings();
+	})
 
 	$('#tw-toggle-live').click(function(){
 		settings.toggleLive();
